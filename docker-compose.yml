@@ -1,0 +1,35 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: careplus-sql
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: A1b2C3d4@XyZ! # Ensure this meets SQL Server password complexity requirements
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD", "bash", "-c", "</dev/tcp/localhost/1433"] # Check if SQL Server port is open
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    restart: always
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: careplus-api
+    ports:
+      - "8080:8080"
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=CarePlusFitDB;User Id=SA;Password=A1b2C3d4@XyZ!;TrustServerCertificate=True;MultipleActiveResultSets=true"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    restart: always
+
+volumes:
+  sqlserver_data:

@@ -168,6 +168,3 @@ CarePlusApi/
 ├── CarePlusApi.Tests/ # xUnit Test Project
 └── docker-compose.yml # Container Orchestration
 ```
-
----
-*Built with ❤️ for a healthier corporate environment.*

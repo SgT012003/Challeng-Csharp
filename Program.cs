@@ -93,7 +93,7 @@ using (var scope = app.Services.CreateScope())
 {
     // Create all databases and apply migrations if necessary
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    if (!db.Database.EnsureCreated()) app.MigrateWithRetry();
+    app.MigrateWithRetry();
 }
 
 app.UseExceptionHandlingMiddleware();

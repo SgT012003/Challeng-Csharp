@@ -12,15 +12,14 @@ Bem-vindo ao projeto CarePlusApi! Esta é a API principal de um ecossistema que 
 |Vinicius da Silva|553240|
 
 
-## 📝 About the Project
+## About the Project
 [![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Build Status](https://github.com/SgT01/Challeng-Csharp/actions/workflows/ci.yml/badge.svg)](https://github.com/SgT01/Challeng-Csharp/actions)
 [![Swagger](https://img.shields.io/badge/Swagger-OpenAPI_3.0-85EA2D.svg)](http://swagger.io/)
 
 A robust, secure, and scalable RESTful API designed to power a corporate wellness and health gamification ecosystem. This platform engages employees by tracking physical activities, offering challenges, and rewarding healthy habits.
 
-## 📋 Table of Contents
+## Table of Contents
 - [Features](#-features)
 - [Architecture & Patterns](#-architecture--patterns)
 - [Entity-Relationship Model](#-entity-relationship-model)
@@ -32,14 +31,14 @@ A robust, secure, and scalable RESTful API designed to power a corporate wellnes
 - [Authentication](#-authentication)
 - [Folder Structure](#-folder-structure)
 
-## ✨ Features
+## Features
 - **User Management**: Secure registration and authentication using JWT & BCrypt.
 - **Challenges**: Create, track, and complete fitness and wellness challenges.
 - **Gamification**: Accumulate points, climb the ranking ladder, and earn rewards.
 - **Wearable Integration**: Foundation for synchronizing steps with wearable devices.
 - **Resilience**: Comprehensive global exception handling to protect data integrity.
 
-## 🏛️ Architecture & Patterns
+## Architecture & Patterns
 
 The project follows a **Clean Architecture** approach tailored for .NET 8, implementing the following design patterns:
 - **Repository Pattern**: Abstraction of data access logic.
@@ -55,7 +54,7 @@ graph TD
     R -->|Entity Framework Core| DB[(SQL Server)]
 ```
 
-## 🗄️ Entity-Relationship Model (ERM)
+## Entity-Relationship Model (ERM)
 
 ```mermaid
 erDiagram
@@ -84,7 +83,7 @@ erDiagram
     }
 ```
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework:** .NET 8.0 ASP.NET Core
 - **Database:** SQL Server
@@ -95,14 +94,14 @@ erDiagram
 - **API Documentation:** Swashbuckle.AspNetCore (Swagger)
 - **Containerization:** Docker & Docker Compose
 
-## 🔧 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - [Docker](https://www.docker.com/products/docker-desktop) and Docker Compose
 - [Visual Studio 2022](https://visualstudio.microsoft.com/) or [VS Code](https://code.visualstudio.com/)
 
-## 🏃 Getting Started
+## Getting Started
 
 ### 1. Start the Environment (Docker)
 The easiest way to get the database and API running is through Docker Compose.
@@ -126,7 +125,7 @@ dotnet run
 Once running, navigate to the Swagger UI to explore and test the endpoints:
 - **Local:** `http://localhost:8080/swagger`
 
-## 🧪 Testing
+## Testing
 
 The solution includes an independent test project (`CarePlusApi.Tests`) ensuring high reliability for core business logic.
 
@@ -135,20 +134,20 @@ The solution includes an independent test project (`CarePlusApi.Tests`) ensuring
 dotnet test --verbosity normal
 ```
 
-## 🔄 CI/CD 
+## CI/CD 
 
 This project is configured with GitHub Actions. The pipeline `.github/workflows/ci.yml` is triggered on every push or pull request to the `main` branch, ensuring that:
 1. The code builds successfully.
 2. All unit tests pass.
 
-## 🔐 Authentication
+## Authentication
 
 Most endpoints are secured. To interact with them:
 1. **Register**: `POST /api/usuarios/registrar`
 2. **Login**: `POST /api/usuarios/login` (Returns a `token`)
 3. **Authorize**: Click the "Authorize" button in Swagger and paste: `Bearer {your_token_here}`.
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```text
 CarePlusApi/

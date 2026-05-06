@@ -51,11 +51,13 @@ namespace CarePlusApi
 
             context.Response.StatusCode = (int)statusCode;
 
-            return context.Response.WriteAsJsonAsync(new
+            var response = new
             {
                 message = message,
-                details = exception.Message
-            });
+                details = statusCode == HttpStatusCode.InternalServerError ? "Consulte os logs do servidor para mais detalhes." : exception.Message
+            };
+
+            return context.Response.WriteAsJsonAsync(response);
         }
     }
 

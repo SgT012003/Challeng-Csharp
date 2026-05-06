@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using CarePlusApi.Interfaces;
 using CarePlusApi.DTOs;
 using CarePlusApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CarePlusApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ChallengesController : ControllerBase
     {
         private readonly IChallengeService _challengeService;

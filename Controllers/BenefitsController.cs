@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using CarePlusApi.Interfaces;
 using CarePlusApi.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CarePlusApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class BenefitsController : ControllerBase
     {
         private readonly IBenefitService _benefitService;

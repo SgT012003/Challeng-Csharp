@@ -10,7 +10,7 @@ namespace CarePlusApi.Data.Repositories
         {
         }
 
-        public async Task<Usuario?> GetByIdAsync(Guid id)
+        public new async Task<Usuario?> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }

@@ -46,6 +46,8 @@ The project follows a **Clean Architecture** approach tailored for .NET 8, imple
 - **Dependency Injection (DI)**: Extensively used to maintain low coupling.
 - **DTOs & Data Annotations**: Ensuring proper data transfer and validation.
 
+![image](./docs/1.png)
+
 ```mermaid
 graph TD
     UI(Client / Frontend) -->|HTTP Request| C(Controllers)
@@ -82,6 +84,8 @@ erDiagram
         string Category
     }
 ```
+
+![image](./docs/2.png)
 
 ## Tech Stack
 
